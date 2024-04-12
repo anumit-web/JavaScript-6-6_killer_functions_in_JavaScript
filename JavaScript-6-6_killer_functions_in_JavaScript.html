@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> JavaScript String Methods </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <h1> <span class="h1_styles_css">6 Killer Functions in JavaScript</span> </h1>
+    <br>
+    <h3> <span class="h3_styles_css">1. check if element is visible in the viewport</span> </h3>
+    <h3> <span class="h3_styles_css">2. Detect Device</span> </h3>
+    <h3> <span class="h3_styles_css">3. Hide Elements</span> </h3>
+    <h3> <span class="h3_styles_css">4. Get the parameters from the URL</span> </h3>
+    <h3> <span class="h3_styles_css">5. Deep copy an object with ease</span> </h3>
+    <h3> <span class="h3_styles_css">6. wait function</span> </h3>
+
+    <br><br>    
+    <button id="button_for_rings">Submit me</button>
+    <br><br>
+
+    <button id="test_button_for_rings_1">Test for hide and display - 1</button>
+    <button id="test_button_for_rings_2">Test for hide and display - 2</button>
+    <button id="test_button_for_rings_3">Test for hide and display - 3</button>
+    <button id="test_button_for_rings_4">Test for hide and display - 4</button>
+    
+    <div id="data_from_api"></div>
+
+    <div>
+
+
+    </div>
+
+    <script>
+        const string1 = "I Have Found It Is The Small Things, Everyday Deeds Of Ordinary Folk That Keeps The Darkness At Bay";
+        // Slice( ) and splice( ) methods are for arrays. The split( ) method is used for strings.
+
+
+        console.log("JavaScript String Methods");
+
+        // IntersectionObserver is a great way to check if an element is visible in the viewport.
+
+        const callback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    //'entry. target is the dom element 
+                    console.log('${entry.target.id} is visible');
+                }
+            });
+        };
+
+        let options = {
+            threshold: 1.0,
+        };
+
+        let observer = new IntersectionObserver(callback, options);
+        const button_for_rings_button = document.getElementById("button_for_rings");
+        observer.observe(button_for_rings_button);
+
+        // 2. Detect Device
+        const detectDeviceType = () =>
+            /Android|WebOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
+                navigator.userAgent )
+            ? "Mobile" : "Desktop";
+        console.log("Device = " + detectDeviceType());
+
+        // 3. Hide Elements
+        // test_button_for_rings_2
+        document.getElementById("test_button_for_rings_2").style.display = 'none';
+        document.getElementById("test_button_for_rings_3").style.visibility = 'hidden';
+
+
+
+    </script>
+
+
+</body>
+
+</html>
