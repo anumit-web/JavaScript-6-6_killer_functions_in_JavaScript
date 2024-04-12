@@ -27,7 +27,7 @@
     <h3> <span class="h3_styles_css">5. Deep copy an object with ease</span> </h3>
     <h3> <span class="h3_styles_css">6. wait function</span> </h3>
 
-    <br><br>    
+    <br><br>
     <button id="button_for_rings">Submit me</button>
     <br><br>
 
@@ -35,7 +35,7 @@
     <button id="test_button_for_rings_2">Test for hide and display - 2</button>
     <button id="test_button_for_rings_3">Test for hide and display - 3</button>
     <button id="test_button_for_rings_4">Test for hide and display - 4</button>
-    
+
     <div id="data_from_api"></div>
 
     <div>
@@ -72,14 +72,21 @@
         // 2. Detect Device
         const detectDeviceType = () =>
             /Android|WebOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
-                navigator.userAgent )
-            ? "Mobile" : "Desktop";
+                navigator.userAgent)
+                ? "Mobile" : "Desktop";
         console.log("Device = " + detectDeviceType());
 
         // 3. Hide Elements
         // test_button_for_rings_2
         document.getElementById("test_button_for_rings_2").style.display = 'none';
         document.getElementById("test_button_for_rings_3").style.visibility = 'hidden';
+
+        // 4. Get the parameters from the URL
+        const url = new URL(window.location.href);        
+        const paramValue = url.searchParams.get("paramName");                
+        console.log(paramValue);
+        const paramValue2 = url.searchParams.get("country");                
+        console.log(paramValue2);
 
 
 
