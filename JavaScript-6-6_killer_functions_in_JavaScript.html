@@ -82,11 +82,25 @@
         document.getElementById("test_button_for_rings_3").style.visibility = 'hidden';
 
         // 4. Get the parameters from the URL
-        const url = new URL(window.location.href);        
-        const paramValue = url.searchParams.get("paramName");                
+        const url = new URL(window.location.href);
+        const paramValue = url.searchParams.get("paramName");
         console.log(paramValue);
-        const paramValue2 = url.searchParams.get("country");                
+        const paramValue2 = url.searchParams.get("country");
         console.log(paramValue2);
+
+        // 5. Deep copy an object with ease
+        const deepCopy = (obj) = JSON.parse(JSON.stringify(obj));
+
+        // 6. wait function
+        const wait = (ms) = new Promise((resolve) = setTimeout(resolve, ms));
+
+        const asyncFunc = async () => {
+            await wait(1000);
+            console.log("async");
+        };
+        asyncFunc();
+
+
 
 
 
